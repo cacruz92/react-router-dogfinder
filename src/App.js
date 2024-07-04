@@ -1,12 +1,15 @@
 import './App.css';
 import Dogs from './Dogs';
 import DogInfo from './DogInfo';
+import { Route, Routes } from "react-router-dom";
 
 function App({dogs}) {
   return (
-    <div className="App">
-      <Dogs dogs={dogs}/>
-    </div>
+  <Routes>
+    <Route path="/" element={<Dogs dogs={dogs}/>} />  
+    <Route path="/dogs/:name" element={<DogInfo dogs={dogs} />} />  
+    <Route path="*" element={<Dogs dogs={dogs} />} />  
+  </Routes>
   );
 }
 

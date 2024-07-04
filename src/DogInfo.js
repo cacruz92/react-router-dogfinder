@@ -1,13 +1,26 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 
-const DogInfo = ({dog, key}) => {
+const DogInfo = ({dogs, key}) => {
+    const {name} = useParams();
+    const dog = dogs.find(dog => dog.name.toLowerCase() === name.toLowerCase());
+    
+    
+
     return(
+        
         <div>
-            <h2>Name: {dog.name}</h2>
-            <h3>Age: {dog.age}</h3>
+            <h1>Name: {dog.name}</h1>
             <img src = {`/${dog.src}`} />
-            <p>Facts: {dog.facts}</p>
+            <h3>Age: {dog.age}</h3>
+            <h4>Facts:</h4> 
+            <ul>
+            {dog.facts.map((fact, index) => (
+                <li key={index}>{fact}</li>
+            ))}
+            </ul>
         </div>
+
     )
 }
 
