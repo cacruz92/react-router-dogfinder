@@ -1,5 +1,6 @@
 import './App.css';
 import Dogs from './Dogs';
+import DogInfo from './DogInfo';
 
 function App() {
   return (
