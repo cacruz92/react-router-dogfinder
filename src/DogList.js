@@ -1,11 +1,14 @@
 import React from "react";
-import DogInfo from "./DogInfo";
+import DogInfo from "./DogDetails";
 import { Link } from "react-router-dom";
+import Nav from "./Nav";
+
 
 
 const Dogs = ({dogs}) => {
     return(
         <div>
+            <Nav dogs={dogs}/>
             {dogs.map((dog, index) =>(
             <Link to={`/dogs/${dog.name.toLowerCase()}`} >
             <>

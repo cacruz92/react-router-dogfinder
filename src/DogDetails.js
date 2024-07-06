@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import Nav from "./Nav";
 
 const DogInfo = ({dogs, key}) => {
     const {name} = useParams();
@@ -10,6 +11,7 @@ const DogInfo = ({dogs, key}) => {
     return(
         
         <div>
+            <Nav dogs={dogs}/>
             <h1>Name: {dog.name}</h1>
             <img src = {`/${dog.src}`} />
             <h3>Age: {dog.age}</h3>
